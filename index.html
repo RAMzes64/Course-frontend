@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire</title>
+    <link rel="stylesheet" href="static/style/index.css">
+    <script src="static/main.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="enter-logo" href = "index.html">
+            <img class = "logo" src="static/img/fire-logo.svg" >
+        </a>
+        <ul>
+            <li>
+                <a class = "enter-link" href="enter.html">Вход</a>
+            </li>     
+            <li>
+                <a class = "reg-link" href="registration.html">Регистрация</a> 
+            </li>
+        </ul>
+    </nav>    
+    <main>
+        <p class = "form-container">
+            <h1>Выберите параметры диаграммы</h1>
+            <form action="" id = "diagram-form" class="diagram-form" >
+                <div class = "diagram-type-container">
+                    <label for="diagram-type">Тип диаграммы</label>
+                    <select id = "diagram-type" onchange="createSubcategory()">
+                        <option value="1"> Выберите тип диаграммы </option>
+                        <option value="StandartScore"> График зависимости Кол-во пожаров и Даты (месяц, год)</option>
+                    </select>
+                </div>    
+            </form>    
+        </p>
+        <p class="chart">
+            <img class = "chart-img">
+        </p>
+    </main>
+</body>
+<footer>
+    mail@mail.com<br>
+    +7 (999) 999-99-99<br>
+</footer>    
+</html>    
