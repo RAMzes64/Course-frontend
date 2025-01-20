@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fire</title>
     <link rel="stylesheet" href="static/style/index.css">
-    <script src="static/main.js" defer></script>
+    <script src="static/main.js"></script>
 </head>
 <body>
     <nav class="navbar">
         <a class="enter-logo" href = "index.html">
-            <img class = "logo" src="static/img/fire-logo.svg" >
+            <img class = "logo" src="static/img/fire-logo.svg" alt="fire">
         </a>
         <ul>
             <li>
@@ -22,21 +22,32 @@
         </ul>
     </nav>    
     <main>
-        <p class = "form-container">
+        <div class = "form-container">
             <h1>Выберите параметры диаграммы</h1>
             <form action="" id = "diagram-form" class="diagram-form" >
-                <div class = "diagram-type-container">
+                <div class = "diagram-type-container" id = "diagram-type-container-1">
                     <label for="diagram-type">Тип диаграммы</label>
                     <select id = "diagram-type" onchange="createSubcategory()">
                         <option value="1"> Выберите тип диаграммы </option>
                         <option value="StandartScore"> График зависимости Кол-во пожаров и Даты (месяц, год)</option>
+                        <!--<option value="CircleFiretypes"> Круговая диаграмма по типам пожаров в регионе</option>-->
                     </select>
-                </div>    
+                </div>
+                <div class = "diagram-type-container" id = "diagram-type-container-2">
+                    <label for="region-select">Регион</label>
+                    <select id = "region-select" onclick="regionsSelect(event)">
+                        <option value=""> Выберите регион </option>
+                    </select>
+                </div>   
+                <input type="submit" value = "Сгенерировать диаграмму" onclick="getDrawChart()"> 
             </form>    
-        </p>
-        <p class="chart">
-            <img class = "chart-img">
-        </p>
+        </div>
+
+        <div class="chart">
+            <canvas id="myCanvas" width="800" height="400"></canvas>
+        </div>
+        <script>
+        </script>
     </main>
 </body>
 <footer>
