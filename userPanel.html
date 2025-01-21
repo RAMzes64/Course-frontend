@@ -4,25 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fire</title>
-    <link rel="stylesheet" href="static/style/index.css">
-    <script src="static/main.js"></script>
+    <link rel="stylesheet" href="static/style/user.css">
+    <script src="static/user.js"></script>
 </head>
 <body>
     <nav class="navbar">
-        <a class="enter-logo" href = "index.html">
+        <a class="enter-logo" id = "index">
             <img class = "logo" src="static/img/fire-logo.svg" alt="fire">
         </a>
-        <ul>
-            <li>
-                <a class = "enter-link" href="enter.html">Вход</a>
-            </li>     
-            <li>
-                <a class = "reg-link" href="registration.html">Регистрация</a> 
-            </li>
-        </ul>
     </nav>
 
 </body>
+    <div class="data-container">
+        <h1> Добавить данные </h1>
+        <fieldset class = mainFieldSet>
+            <legend>Форма для данных</legend>
+            <form class="addFireData">
+                <div class="form-group">
+                    <label for="dt">Дата:</label>
+                    <input type="date" id="dt" required>
+                </div>
+                <div class="form-group">
+                    <label for = "typeSelect">Тип пожара</label>
+                    <select id = "typeSelect" class = "fire-type-select">
+                        <option id="1" value="1">Неконтролируемый пал</option> 
+                        <option id="2" value="2">Торфяной пожар</option>
+                        <option id="3" value="3">Лесной пожар</option>
+                        <option id="4" value="4">Природный пожар</option>
+                        <option id="5" value="5">Контролируемый пал</option>
+                    </select>
+                </div>
+                <fieldset class = "form-group">
+                    <legend>Координаты</legend>
+                    <div class="coordinate">
+                        <label for="lat">Широта:</label>
+                        <input type="number" id="lat" required>
+                    </div>
+                    <div class="coordinate">
+                        <label for="lon">Долгота:</label>
+                        <input type="number" id="lon" required>
+                    </div>
+                </fieldset>
+                <div class="form-group" id = "diagram-type-container-2">
+                    <label for="region-select">Регион</label>
+                    <select id = "region-select" onclick="regionsSelect(event)">
+                        <option value=""> Выберите регион </option>
+                    </select>
+                </div>
+                <input type="submit" value = "Отправить данные" onclick="insertData()">
+            </form>
+        </fieldset>
+    </div>
 <footer>
     mail@mail.com<br>
     +7 (999) 999-99-99<br>
